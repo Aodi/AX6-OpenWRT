@@ -11,11 +11,11 @@ function git_sparse_clone() {
 
 # Add packages
 #添加科学上网源
-#git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall-packages
-#git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall
+git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall-packages
+git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall
 git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
-#git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/ddnsgo
+git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/ddnsgo
 #git clone --depth 1 https://github.com/sbwml/luci-app-mosdns package/mosdns
 #git clone --depth 1 https://github.com/sbwml/luci-app-alist package/alist
 #git clone --depth=1  https://github.com/kenzok8/small-package package/small-package
@@ -41,15 +41,15 @@ git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config package/l
 #删除库中的插件，使用自定义源中的包。
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/luci/applications/luci-app-argon-config
-#rm -rf feeds/luci/applications/luci-app-ddns-go
-#rm -rf feeds/packages/net/ddns-go
+rm -rf feeds/luci/applications/luci-app-ddns-go
+rm -rf feeds/packages/net/ddns-go
 #rm -rf feeds/packages/net/alist
 #rm -rf feeds/luci/applications/luci-app-alist
-#rm -rf feeds/luci/applications/openwrt-passwall
+rm -rf feeds/luci/applications/openwrt-passwall
 
 
 #修改默认IP
-#sed -i 's/192.168.1.1/192.168.123.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.3.1/g' package/base-files/files/bin/config_generate
 
 #修改主机名
 #sed -i "s/hostname='ImmortalWrt'/hostname='Redmi-AX6'/g" package/base-files/files/bin/config_generate
